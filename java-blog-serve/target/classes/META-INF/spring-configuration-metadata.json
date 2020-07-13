@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "blog.jwt",
+      "type": "com.ssp.vue.blog.common.util.JwtUtil",
+      "sourceType": "com.ssp.vue.blog.common.util.JwtUtil"
+    }
+  ],
+  "properties": [
+    {
+      "name": "blog.jwt.expire",
+      "type": "java.lang.Long",
+      "sourceType": "com.ssp.vue.blog.common.util.JwtUtil",
+      "defaultValue": 0
+    },
+    {
+      "name": "blog.jwt.header",
+      "type": "java.lang.String",
+      "sourceType": "com.ssp.vue.blog.common.util.JwtUtil"
+    },
+    {
+      "name": "blog.jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.ssp.vue.blog.common.util.JwtUtil"
+    }
+  ],
+  "hints": []
+}

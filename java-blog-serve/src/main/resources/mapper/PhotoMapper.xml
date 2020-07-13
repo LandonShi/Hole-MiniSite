@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssp.vue.blog.mapper.PhotoMapper">
+    <insert id="insertOne" useGeneratedKeys="true" keyProperty="id" parameterType="com.ssp.vue.blog.entity.Photo">
+        insert into photo values(#{id}, #{name}, #{description}, #{createDate}, #{address}, #{atlas.id})
+    </insert>
+
+    <update id="updateByAddress" >
+        update photo p set p.address = #{address} where p.id = #{id}
+    </update>
+
+    <select id="findAllByAtlas" parameterType="Integer" resultType="com.ssp.vue.blog.entity.Photo">
+        select * from photo where atlas_id = #{atlas_id}
+    </select>
+
+    <select id="getCountByAtlas" parameterType="Integer" resultType="Integer">
+        select count(atlas_id) from photo where atlas_id = #{atlas_id}
+    </select>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssp.vue.blog.mapper.AtlasMapper">
+
+    <delete id="removeAtlasAndPhotoById" parameterType="Integer">
+        delete atlas, photo from atlas left join photo on atlas.id = photo.atlas_id
+        <where>
+            <if test="id != null">
+                and atlas.id = #{id}
+            </if>
+        </where>
+    </delete>
+
+    <select id="getOneRec" resultType="com.ssp.vue.blog.entity.Atlas">
+        select * from atlas order by createDate desc limit 1
+    </select>
+</mapper>
